@@ -1,0 +1,23 @@
+app-id: com.triasoft.ravplayer
+runtime: org.kde.Platform
+runtime-version: '6.10'
+sdk: org.kde.Sdk
+command: rav-player
+finish-args:
+  - --share=ipc
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --device=dri
+  - --socket=pulseaudio
+  - --talk-name=org.freedesktop.portal.Desktop
+modules:
+  # libmpv is not provided by the KDE runtime or Flathub shared-modules.
+  # Bundle a maintained libmpv build module and its dependencies here before building.
+  - name: rav-player
+    buildsystem: cmake-ninja
+    config-opts:
+      - -DCMAKE_BUILD_TYPE=Release
+      - -DCMAKE_INSTALL_PREFIX=/app
+    sources:
+      - type: dir
+        path: .

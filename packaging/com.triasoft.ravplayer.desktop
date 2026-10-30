@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=RAV Player
+GenericName=Media Player
+Comment=Repeat audio and video files
+Exec=rav-player %F
+Icon=com.triasoft.ravplayer
+Terminal=false
+Categories=AudioVideo;Player;Qt;
+MimeType=audio/mpeg;audio/flac;audio/wav;audio/ogg;audio/aac;audio/mp4;audio/opus;video/mp4;video/x-matroska;video/webm;video/quicktime;video/x-msvideo;
+StartupNotify=true
